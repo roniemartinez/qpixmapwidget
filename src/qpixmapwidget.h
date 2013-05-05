@@ -34,16 +34,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <QUrl>
 #include <QMimeData>
 
-#if defined(QPIXMAPWIDGET_STATIC)
 class QPixmapWidget : public QWidget
-#else
-    #if defined(QPIXMAPWIDGET_LIBRARY)
-    # define QPIXMAPWIDGETSHARED_EXPORT Q_DECL_EXPORT
-    #else
-    # define QPIXMAPWIDGETSHARED_EXPORT Q_DECL_IMPORT
-    #endif
-class QPIXMAPWIDGETSHARED_EXPORT QPixmapWidget : public QWidget
-#endif
 {
     Q_OBJECT
     Q_PROPERTY(QPixmap pixmap READ pixmap WRITE setPixmap)
